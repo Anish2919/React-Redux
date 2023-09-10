@@ -1,0 +1,12 @@
+How to plan for the redux 
+
+- what actions to create
+- what will be the inital state 
+- how will be the reducer 
+- Is it Async Actions 
+- How to dispatch the action  
+
+
+
+
+
