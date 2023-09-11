@@ -6,6 +6,42 @@ How to plan for the redux
 - Is it Async Actions 
 - How to dispatch the action  
 
+****** React redux ********* 
+
+process: 
+- created "redux" folder, 
+- created 'action', 'reducer', 'store' subfolder  
+- imported 'Provider' from 'react-router' and provided 'store' 
+
+    code: 
+        <Provider store={store}> 
+            <App/> 
+        </Provider/>  
+
+- installed react-devtools-extension 
+- imported in store and applied. 
+
+    code: 
+    import {composeWithDevTools} from 'react-devtools-extension'; 
+
+    const store = createStore(notesReducer, composeWithDevTools()); 
+ 
+- importing useSelector and useDispatch from 'react-redux'; 
+- useSelector(callbackfunc) - useSelector takes callback function which takes the store as a parameter. for example: 
+    code: 
+    useSelector(store => {store.notes});  
+
+- useDispatch hook is used to dispatch the action creator  
+
+********* end React redux ******** 
+
+
+
+
+
+
+
+
 
 
 

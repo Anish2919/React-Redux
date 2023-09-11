@@ -1,11 +1,17 @@
 import React from 'react';
 import {useForm} from 'react-hook-form'; 
+import { useDispatch } from 'react-redux'; 
+import { addNoteAction } from '../redux/action/notesAction';
 
 const AddNotes = () => {
-    const {register, formState:{errors}, reset, handleSubmit } = useForm(); 
+    const {register, formState:{errors}, reset, handleSubmit } = useForm();  
 
+    // initialize dispatch 
+    const dispatch = useDispatch(); 
+  
     const addNote = (data) => {
-        console.log(data); 
+        // add dispatch 
+        dispatch(addNoteAction(data)); 
         reset(); 
     }
   return (
@@ -17,8 +23,8 @@ const AddNotes = () => {
                 {...register('title', {
                     required:'Input is required',
                 })}/>
-            <input className='border rounded-md block w-64 px-3' type="text" placeholder='Add Note' 
-                {...register('note', {
+            <input className='border rounded-md block w-64 px-3' type="text" placeholder='Add Content' 
+                {...register('content', {
                     required:true, 
                 })}/>
             <button className='btn' type='submit'>Add</button>
