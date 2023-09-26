@@ -47,7 +47,8 @@ export const notesReducer = (state=initialState, action) => {
          case DELETE_NOTE: 
             const filteredNotes = state.notes.filter(note => {
                 return note.id !== action.payload; 
-            }); 
+            });  
+            localStorage.setItem('notes', JSON.stringify(filteredNotes)); 
             return {
                 notes: filteredNotes, 
             }
