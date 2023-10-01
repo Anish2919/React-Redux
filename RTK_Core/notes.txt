@@ -1,0 +1,22 @@
+# Configure Store 
+The standard method for creating a Redux store. It uses the low-level Redux core 'createStore' method internally, but wraps that to provide good defaults to the store setup for a better development experience. 
+
+
+
+# redux-logger 
+A third party logger. 
+
+# createAsyncThunk
+A function that accepts a Redux action type string and a callback function that should return a promise. It generates promise lifecycle action types based on the action type prefix that you pass in, and returns a thunk action creator that will run the promise callback and dispatch the lifecycle actions based on the returned promise.
+
+This abstracts the standard recommended approach for handling async request lifecycles.
+
+It does not generate any reducer functions, since it does not know what data you're fetching, how you want to track loading state, or how the data you return needs to be processed. You should write your own reducer logic that handles these actions, with whatever loading state and processing logic is appropriate for your own app.
+
+- It is recommended apporach for handling async request thunk. 
+- This API has eliminated the traditional of installing redux-thunk for async actions 
+- It return a promise. 
+
+
+- pending - fulfilled -rejected 
+
